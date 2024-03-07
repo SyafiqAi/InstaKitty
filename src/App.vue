@@ -6,6 +6,7 @@
         <RouterLink to="/feed">Feed</RouterLink>
         <RouterLink to="/register">Register</RouterLink>
         <RouterLink to="/sign-in">Sign In</RouterLink>
+        <RouterLink to="/upload-image">Upload</RouterLink>
         <div style="cursor: pointer;" @click="handleSignOut" v-if="isLoggedIn">Sign out</div>
       </nav>
     </div>
