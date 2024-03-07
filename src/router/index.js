@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
+import isLoggedIn from '@/firebase/isLoggedIn'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -25,9 +26,22 @@ const router = createRouter({
     {
       path: '/feed',
       name: 'feed',
-      component: () => import('../views/Feed.vue')
+      component: () => import('../views/Feed.vue'),
+      meta: {
+        requiresAuth: true
+      }
     }
   ]
+})
+
+
+router.beforeEach(async (to, from, next) => {
+  if (to.meta.requiresAuth && !await isLoggedIn()) {
+    alert("You're not logged in")
+    next("/");
+  } else {
+    next();
+  }
 })
 
 export default router
