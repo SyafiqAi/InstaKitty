@@ -17,5 +17,18 @@ import { RouterLink, RouterView } from 'vue-router'
   <RouterView />
 </template>
 
-<style scoped>
+<style scoped lang="scss">
+nav {
+  * {
+    padding: 1rem;
+    display: inline-block;
+    color: inherit;
+    text-decoration: none;
+  }
+  :hover {
+    text-decoration: underline;
+  }
+  text-align: center;
+  margin-top: 4rem;
+}
 </style>
