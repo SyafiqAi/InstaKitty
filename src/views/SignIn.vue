@@ -21,7 +21,7 @@
 
 <script setup>
 import { ref } from "vue";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth"
+import { getAuth, GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth"
 import { useRouter } from "vue-router"
 
 const email = ref("")
@@ -60,6 +60,14 @@ function signIn() {
     })
 }
 function signInWithGoogle() {
+const provider = new GoogleAuthProvider();
+const auth = getAuth();
+signInWithPopup(auth, provider)
+  .then((result) => {
+    router.push('/upload-image')
+  }).catch((error) => {
+    alert('error: ', error)
+  });
 
 }
 </script>
