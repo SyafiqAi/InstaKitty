@@ -26,20 +26,19 @@ export async function uploadImage(file) {
   const metadata = {
     customMetadata: {
       'author_uid': author.uid
+      // the delete function checks author_uid before deleting
+      // in the firebase security rules, only allow users to delete their own posts.
     }
-    // for delete function
-    // in the firebase security rules, only allow users to delete their own posts.
   };
-  uploadBytes(newImageRef, file, metadata)
-    .then((snapshot) => {
-      alert('Uploaded a file!');
-      console.log(snapshot)
-    })
-    .catch((error) => {
-      alert('Error!');
-      console.log(error)
-    })
-    ;
+  return new Promise((resolve, reject) => {
+    uploadBytes(newImageRef, file, metadata)
+      .then((snapshot) => {
+        resolve(snapshot)
+      })
+      .catch((error) => {
+        reject(error)
+      })
+  })
 }
 
 function uuidv4() { //generate unique id for naming files.

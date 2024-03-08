@@ -1,18 +1,16 @@
 <template>
   <h1>Upload image</h1>
+  <div>
+    <button @click="handleDelete">Delete</button>
+    <button @click="handleGetmeta">gethandleGetmeta</button>
+    <button @click="showuser">show user</button>
+    <button @click="uploadText">upload text only</button>
+  </div>
+  
   <input @change="imageInputChange" ref="imgInput" accept="image/*" type="file" />
   <input @input="textInputChange" type="text" placeholder="title" v-model="postTitle"/>
   <img :src="imgUrl" alt="user's image" />
   <button @click="handleUpload">Upload</button>
-  <button @click="handleDelete">Delete</button>
-  <button @click="handleGetmeta">gethandleGetmeta</button>
-  <button @click="showuser">show user</button>
-  <Suspense>
-    <Xray />
-    <template #fallback>
-      <span style="background-color: red"> Loading xray </span>
-    </template>
-  </Suspense>
 </template>
 
 <script setup>
@@ -20,6 +18,7 @@ import Xray from '../components/Xray.vue'
 import { onMounted, ref } from 'vue'
 import { getMeta, uploadImage, deleteImage } from '@/firebase/storageCreateRef'
 import getCurrentUser from '@/firebase/getCurrentUser'
+import uploadPost from '@/firebase/firestore/addDocument.js'
 
 const postTitle = ref('')
 
@@ -38,7 +37,27 @@ function imageInputChange(event) {
 
 function handleUpload() {
   const [file] = imgInput.value.files
+
   uploadImage(file)
+    .then(async (snapshot) => {
+      const filename = snapshot.metadata.name
+      const author = await getCurrentUser();
+      const post = {
+        filename: filename,
+        author_uid: author.uid,
+        title: postTitle.value
+      }
+
+      return uploadPost(post);
+    })
+    .then((result)=> {
+      alert('success')
+      console.log(result)
+    })
+    .catch((error) => {
+      alert("failed")
+      console.log(error)
+    })
   // getMeta();
 }
 
@@ -52,7 +71,11 @@ function handleGetmeta() {
 
 async function showuser() {
   const cu = await getCurrentUser()
-  console.log(cu);
+  console.log(cu.uid);
+}
+
+function uploadText() {
+  uploadPost();
 }
 
 </script>
