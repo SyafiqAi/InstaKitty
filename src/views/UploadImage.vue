@@ -41,9 +41,11 @@ function handleUpload() {
     .then(async (snapshot) => {
       const filename = snapshot.metadata.name
       const author = await getCurrentUser();
+      const authorName = getAuthorName(author)
       const post = {
         filename: filename,
         author_uid: author.uid,
+        author_name: authorName,
         title: postTitle.value,
         date_posted: Date.now()
       }
@@ -61,6 +63,13 @@ function handleUpload() {
   // getMeta();
 }
 
+function getAuthorName(author) {
+  if (author.displayName)
+    return author.displayName.split(' ')[0]
+  else
+    return author.email.split('@')[0]
+}
+
 function handleDelete() {
   deleteImage('868649d5-7f2c-45ab-b2e6-d3880a476193.png');
 }
@@ -71,7 +80,7 @@ function handleGetmeta() {
 
 async function showuser() {
   const cu = await getCurrentUser()
-  console.log(cu.uid);
+  console.log(cu);
 }
 
 function uploadText() {

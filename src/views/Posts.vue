@@ -3,7 +3,9 @@
   <button @click="getNext()">load more</button>
   <div class="cont">
     <div v-for="post in posts" class="box">
-        {{ post.title }}
+        {{ post.title }} by: {{ post.author_name}} <br>
+        <!-- {{ post }} -->
+        <br>
 
         <Suspense>
             <template #fallback>
@@ -11,7 +13,9 @@
             </template>
             <FirebaseImage :post="post" />
         </Suspense>
-        delete
+        <Suspense> 
+          <DeleteButton :post="post"/>
+        </Suspense>
     </div>
   </div>
   <ol></ol>
@@ -20,8 +24,10 @@
 <script setup>
 import '@/firebase/firestore/readDocument.js'
 import FirebaseImage from '@/components/FirebaseImage.vue'
+import DeleteButton from '@/components/DeleteButton.vue'
 import { posts, getNext } from '@/firebase/firestore/readDocument.js'
 import { getImageUrlByFilename } from '@/firebase/storageCreateRef.js'
+import getCurrentUser from '@/firebase/getCurrentUser.js'
 
 </script>
 
