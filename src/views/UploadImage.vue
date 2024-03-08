@@ -45,7 +45,8 @@ function handleUpload() {
       const post = {
         filename: filename,
         author_uid: author.uid,
-        title: postTitle.value
+        title: postTitle.value,
+        date_posted: Date.now()
       }
 
       return uploadPost(post);
