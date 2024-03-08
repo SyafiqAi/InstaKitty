@@ -1,6 +1,7 @@
 <template>
   <h1>Upload image</h1>
-  <input @change="inputChange" ref="imgInput" accept="image/*" type="file" />
+  <input @change="imageInputChange" ref="imgInput" accept="image/*" type="file" />
+  <input @input="textInputChange" type="text" placeholder="title" v-model="postTitle"/>
   <img :src="imgUrl" alt="user's image" />
   <button @click="handleUpload">Upload</button>
   <button @click="handleDelete">Delete</button>
@@ -20,10 +21,12 @@ import { onMounted, ref } from 'vue'
 import { getMeta, uploadImage, deleteImage } from '@/firebase/storageCreateRef'
 import getCurrentUser from '@/firebase/getCurrentUser'
 
+const postTitle = ref('')
+
 const imgInput = ref(null)
 const imgUrl = ref('')
 
-function inputChange(event) {
+function imageInputChange(event) {
   const [file] = imgInput.value.files
   console.log(file)
   if (file) {
@@ -53,3 +56,10 @@ async function showuser() {
 }
 
 </script>
+
+<style lang="scss" scoped>
+img {
+    max-height: 300px;
+    max-width: 300px;
+}
+</style>

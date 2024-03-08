@@ -23,3 +23,10 @@ function handleError(error) {
 }
 
 </script>
+
+<style lang="scss" scoped>
+img {
+    max-height: 300px;
+    max-width: 300px;
+}
+</style>
