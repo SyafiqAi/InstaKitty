@@ -41,18 +41,17 @@ const router = createRouter({
     {
       path: '/',
       name: 'posts',
-      component: () => import('../views/Posts.vue'),
+      component: () => import('../views/Posts.vue')
     }
   ]
 })
 
-
 router.beforeEach(async (to, from, next) => {
-  if (to.meta.requiresAuth && !await isLoggedIn()) {
+  if (to.meta.requiresAuth && !(await isLoggedIn())) {
     alert("You're not logged in")
-    next("/sign-in");
+    next('/sign-in')
   } else {
-    next();
+    next()
   }
 })
 

@@ -1,50 +1,47 @@
 import { db } from '@/firebase'
-import { collection, query, where, getDocs, orderBy, limit, startAfter } from "firebase/firestore";
-import { ref } from 'vue';
+import { collection, query, where, getDocs, orderBy, limit, startAfter } from 'firebase/firestore'
+import { ref } from 'vue'
 
-const queryLimit = 25;
+const queryLimit = 25
 
-const first = query(collection(db, "posts"), orderBy('date_posted', 'desc'), limit(queryLimit));
+const first = query(collection(db, 'posts'), orderBy('date_posted', 'desc'), limit(queryLimit))
 export const posts = ref([])
 
-
-
-let documentSnapshots = await getDocs(first);
+let documentSnapshots = await getDocs(first)
 documentSnapshots.forEach((doc) => {
-    // doc.data() is never undefined for query doc snapshots
-    //   console.log(doc.id, " => ", doc.data());
-    const dat = doc.data()
-    dat['post_id'] = doc.id
-    posts.value.push(dat)
-});
+  // doc.data() is never undefined for query doc snapshots
+  //   console.log(doc.id, " => ", doc.data());
+  const dat = doc.data()
+  dat['post_id'] = doc.id
+  posts.value.push(dat)
+})
 
-let lastVisible;
+let lastVisible
 let loadedAll = false
 
 export async function getNext() {
+  if (loadedAll) return
 
-    if (loadedAll) return;
+  lastVisible = documentSnapshots.docs[documentSnapshots.docs.length - 1]
+  console.log('last', lastVisible)
+  console.log(documentSnapshots.docs)
 
-    lastVisible = documentSnapshots.docs[documentSnapshots.docs.length - 1];
-    console.log("last", lastVisible);
-    console.log(documentSnapshots.docs)
+  // Construct a new query starting at this document,
+  // get the next 25 cities.
+  let next = query(
+    collection(db, 'posts'),
+    orderBy('date_posted', 'desc'),
+    startAfter(lastVisible),
+    limit(queryLimit)
+  )
 
-    // Construct a new query starting at this document,
-    // get the next 25 cities.
-    let next = query(collection(db, "posts"),
-        orderBy("date_posted", "desc"),
-        startAfter(lastVisible),
-        limit(queryLimit));
-
-    documentSnapshots = await getDocs(next);
-    if (documentSnapshots.empty) {
-        loadedAll = true;
-        alert("You've reached the end!")
-        return;
-    }
-    documentSnapshots.forEach((doc) => {
-        posts.value.push(doc.data())
-    })
-
+  documentSnapshots = await getDocs(next)
+  if (documentSnapshots.empty) {
+    loadedAll = true
+    alert("You've reached the end!")
+    return
+  }
+  documentSnapshots.forEach((doc) => {
+    posts.value.push(doc.data())
+  })
 }
-

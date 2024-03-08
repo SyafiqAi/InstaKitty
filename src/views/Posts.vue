@@ -2,18 +2,18 @@
   <h1>Posts</h1>
   <div class="cont">
     <div v-for="post in posts" class="box">
-        {{ post.title }} by: {{ post.author_name}} <br>
-        <!-- {{ post }} -->
+      {{ post.title }} by: {{ post.author_name }} <br />
+      <!-- {{ post }} -->
 
-        <Suspense>
-            <template #fallback>
-                <div style="background-color: red;"> loading</div>
-            </template>
-            <FirebaseImage :post="post" />
-        </Suspense>
-        <Suspense> 
-          <DeleteButton :post="post"/>
-        </Suspense>
+      <Suspense>
+        <template #fallback>
+          <div style="background-color: red">loading</div>
+        </template>
+        <FirebaseImage :post="post" />
+      </Suspense>
+      <Suspense>
+        <DeleteButton :post="post" />
+      </Suspense>
     </div>
   </div>
   <div class="center">
@@ -28,12 +28,9 @@ import DeleteButton from '@/components/DeleteButton.vue'
 import { posts, getNext } from '@/firebase/firestore/readDocument.js'
 import { getImageUrlByFilename } from '@/firebase/storageCreateRef.js'
 import getCurrentUser from '@/firebase/getCurrentUser.js'
-
 </script>
 
-
 <style lang="scss" scoped>
-
 h1 {
   text-align: center;
 }
@@ -59,14 +56,13 @@ h1 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-bottom: 20px;
 }
 
 @media only screen and (min-width: 600px) {
-.box {
-  width: 300px;
-  height: 300px;
+  .box {
+    width: 300px;
+    height: 300px;
+  }
 }
-}
-
-
 </style>

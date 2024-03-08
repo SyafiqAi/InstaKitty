@@ -1,8 +1,8 @@
 <template>
   <h1>Upload image</h1>
-  
+
   <input @change="imageInputChange" ref="imgInput" accept="image/*" type="file" />
-  <input type="text" placeholder="title" v-model="postTitle"/>
+  <input type="text" placeholder="Add a title" v-model="postTitle" />
   <img v-if="imgUrl" :src="imgUrl" alt="user's image" />
   <button @click="handleUpload">Upload</button>
 </template>
@@ -34,7 +34,7 @@ function handleUpload() {
   uploadImage(file)
     .then(async (snapshot) => {
       const filename = snapshot.metadata.name
-      const author = await getCurrentUser();
+      const author = await getCurrentUser()
       const authorName = getAuthorName(author)
       const post = {
         filename: filename,
@@ -44,14 +44,16 @@ function handleUpload() {
         date_posted: Date.now()
       }
 
-      return uploadPost(post);
+      return uploadPost(post)
     })
-    .then((result)=> {
+    .then((result) => {
       alert('Uploaded an image!')
-      router.push('/').then(() => {router.go(0)})
+      router.push('/').then(() => {
+        router.go(0)
+      })
     })
     .catch((error) => {
-      alert("failed")
+      alert('failed')
       console.log(error)
     })
 }
@@ -59,12 +61,11 @@ function handleUpload() {
 function getAuthorName(author) {
   return author.displayName.split(' ')[0]
 }
-
 </script>
 
 <style lang="scss" scoped>
 img {
-    max-height: 300px;
-    max-width: 300px;
+  max-height: 300px;
+  max-width: 300px;
 }
 </style>
