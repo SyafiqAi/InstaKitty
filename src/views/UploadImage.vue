@@ -56,6 +56,10 @@ function handleUpload() {
     })
 }
 
+function getAuthorName(author) {
+  return author.displayName.split(' ')[0]
+}
+
 </script>
 
 <style lang="scss" scoped>

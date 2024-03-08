@@ -50,7 +50,7 @@ const router = createRouter({
 router.beforeEach(async (to, from, next) => {
   if (to.meta.requiresAuth && !await isLoggedIn()) {
     alert("You're not logged in")
-    next("/");
+    next("/sign-in");
   } else {
     next();
   }

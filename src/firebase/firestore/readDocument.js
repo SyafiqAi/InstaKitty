@@ -41,7 +41,7 @@ export async function getNext() {
     documentSnapshots = await getDocs(next);
     if (documentSnapshots.empty) {
         loadedAll = true;
-        alert('done')
+        alert("You've reached the end!")
         return;
     }
     documentSnapshots.forEach((doc) => {

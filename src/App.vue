@@ -1,12 +1,15 @@
 <template>
   <header>
+    <h1>InstaKitty</h1>
     <div>
       <nav>
         <RouterLink to="/">Posts</RouterLink>
-        <RouterLink to="/register">Register</RouterLink>
-        <RouterLink to="/sign-in">Sign In</RouterLink>
         <RouterLink to="/upload-image">Upload</RouterLink>
         <div style="cursor: pointer;" @click="handleSignOut" v-if="isLoggedIn">Sign out</div>
+        <div v-else>
+        <RouterLink to="/register">Register</RouterLink>
+        <RouterLink to="/sign-in">Sign In</RouterLink>
+        </div>
       </nav>
     </div>
   </header>
@@ -41,6 +44,11 @@ function handleSignOut() {
 </script>
 
 <style scoped lang="scss">
+h1 {
+  text-align: center;
+  padding: 2rem;
+}
+
 nav {
   * {
     padding: 1rem;
@@ -52,6 +60,5 @@ nav {
     text-decoration: underline;
   }
   text-align: center;
-  margin-top: 4rem;
 }
 </style>

@@ -1,11 +1,9 @@
 <template>
   <h1>Posts</h1>
-  <button @click="getNext()">load more</button>
   <div class="cont">
     <div v-for="post in posts" class="box">
         {{ post.title }} by: {{ post.author_name}} <br>
         <!-- {{ post }} -->
-        <br>
 
         <Suspense>
             <template #fallback>
@@ -17,6 +15,9 @@
           <DeleteButton :post="post"/>
         </Suspense>
     </div>
+  </div>
+  <div class="center">
+    <button @click="getNext()">load more</button>
   </div>
 </template>
 
@@ -32,18 +33,40 @@ import getCurrentUser from '@/firebase/getCurrentUser.js'
 
 
 <style lang="scss" scoped>
+
+h1 {
+  text-align: center;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  margin-top: 8rem;
+  margin-bottom: 8rem;
+}
+
 .cont {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 .box {
-  width: 300px;
-  height: 300px;
+  width: 50vw;
+  height: 50vw;
   display: block;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
+
+@media only screen and (min-width: 600px) {
+.box {
+  width: 300px;
+  height: 300px;
+}
+}
+
+
 </style>

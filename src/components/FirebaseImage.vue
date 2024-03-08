@@ -16,7 +16,7 @@ const url = ref(await getImageUrlByFilename(props.post.filename))
 
 <style lang="scss" scoped>
 img {
-    max-height: 70%;
-    max-width: 70%;
+    max-height: 75%;
+    max-width: 75%;
 }
 </style>
