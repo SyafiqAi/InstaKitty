@@ -56,7 +56,7 @@ function handleUpload() {
     .then((result)=> {
       alert('success')
       // console.log(result)
-      router.push('/posts').then(() => {router.go(0)})
+      router.push('/').then(() => {router.go(0)})
     })
     .catch((error) => {
       alert("failed")

@@ -18,7 +18,6 @@
         </Suspense>
     </div>
   </div>
-  <ol></ol>
 </template>
 
 <script setup>
