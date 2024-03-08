@@ -9,9 +9,7 @@ export const posts = ref([])
 
 
 
-let documentSnapshots;
-
-documentSnapshots = await getDocs(first);
+let documentSnapshots = await getDocs(first);
 documentSnapshots.forEach((doc) => {
     // doc.data() is never undefined for query doc snapshots
     //   console.log(doc.id, " => ", doc.data());
