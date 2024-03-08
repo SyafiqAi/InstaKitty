@@ -14,7 +14,6 @@
 </template>
 
 <script setup>
-import Xray from '../components/Xray.vue'
 import { onMounted, ref } from 'vue'
 import { getMeta, uploadImage, deleteImage } from '@/firebase/storageCreateRef'
 import getCurrentUser from '@/firebase/getCurrentUser'

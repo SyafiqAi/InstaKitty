@@ -14,8 +14,7 @@ let documentSnapshots;
 documentSnapshots = await getDocs(first);
 documentSnapshots.forEach((doc) => {
     // doc.data() is never undefined for query doc snapshots
-    //   console.log(doc.id, " => ", doc.data());
-    posts.value.push(doc.data().title)
+    posts.value.push(doc.data())
 });
 
 let lastVisible;
@@ -43,7 +42,7 @@ export async function getNext() {
         return;
     }
     documentSnapshots.forEach((doc) => {
-        posts.value.push(doc.data().title)
+        posts.value.push(doc.data())
     })
 
 }

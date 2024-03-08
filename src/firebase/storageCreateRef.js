@@ -6,11 +6,11 @@ const storage = getStorage();
 // Create a storage reference from our storage service
 const imagesRef = ref(storage, 'images');
 
-const xrayRef = ref(storage, 'images/4d260b43-df32-40cf-89d2-30ba92d75f41.png')
+export async function getImageUrlByFilename(filename) {
+  const imageRef = ref(storage, `images/${filename}`)
 
-export default async function getXray() {
   return new Promise((resolve, reject) => {
-    getDownloadURL(xrayRef)
+    getDownloadURL(imageRef)
       .then((url) => {
         resolve(url)
       }).catch((error) => {
