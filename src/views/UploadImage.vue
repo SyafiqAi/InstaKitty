@@ -18,6 +18,7 @@ import { onMounted, ref } from 'vue'
 import { getMeta, uploadImage, deleteImage } from '@/firebase/storageCreateRef'
 import getCurrentUser from '@/firebase/getCurrentUser'
 import uploadPost from '@/firebase/firestore/addDocument.js'
+import router from '@/router'
 
 const postTitle = ref('')
 
@@ -54,7 +55,8 @@ function handleUpload() {
     })
     .then((result)=> {
       alert('success')
-      console.log(result)
+      // console.log(result)
+      router.push('/posts').then(() => {router.go(0)})
     })
     .catch((error) => {
       alert("failed")

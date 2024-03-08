@@ -1,6 +1,7 @@
 import { db } from '@/firebase'
 import { doc, deleteDoc } from "firebase/firestore";
 import { deleteImage } from '../storageCreateRef';
+import router from '@/router';
 
 export default async function deletePost(post) {
     const filename = post.filename
@@ -13,6 +14,7 @@ export default async function deletePost(post) {
     })
     .then(() => {
         alert("successfully deleted")
+        router.go(0)
     })
     .catch((error) => {
         alert("error")
