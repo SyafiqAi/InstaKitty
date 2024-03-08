@@ -17,7 +17,7 @@
 <script setup>
 import Xray from '../components/Xray.vue'
 import { onMounted, ref } from 'vue'
-import { getMeta, uploadImage, del } from '@/firebase/storageCreateRef'
+import { getMeta, uploadImage, deleteImage } from '@/firebase/storageCreateRef'
 import getCurrentUser from '@/firebase/getCurrentUser'
 
 const imgInput = ref(null)
@@ -40,7 +40,7 @@ function handleUpload() {
 }
 
 function handleDelete() {
-  del();
+  deleteImage('868649d5-7f2c-45ab-b2e6-d3880a476193.png');
 }
 
 function handleGetmeta() {
@@ -49,7 +49,7 @@ function handleGetmeta() {
 
 async function showuser() {
   const cu = await getCurrentUser()
-  console.log(cu.displayName);
+  console.log(cu);
 }
 
 </script>
