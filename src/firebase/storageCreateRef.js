@@ -41,29 +41,6 @@ export async function uploadImage(file) {
   })
 }
 
-function uuidv4() { //generate unique id for naming files.
-  return "10000000-1000-4000-8000-100000000000".replace(/[018]/g, c =>
-    (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
-  );
-}
-
-function getFileExtension(file) {
-  const name = file.name
-  const arr = name.split('.')
-  return arr[arr.length - 1];
-}
-
-// Get metadata properties
-export function getMeta() {
-  getMetadata(xrayRef)
-    .then((metadata) => {
-      console.log('meta:', metadata)
-    })
-    .catch((error) => {
-      alert('error')
-    });
-}
-
 export function deleteImage(filename) {
   return new Promise((resolve, reject) => {
     const imageRef = ref(storage, `images/${filename}`)
@@ -74,4 +51,16 @@ export function deleteImage(filename) {
     });
   })
 
+}
+
+function uuidv4() { //generate unique id for naming files.
+  return "10000000-1000-4000-8000-100000000000".replace(/[018]/g, c =>
+    (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+  );
+}
+
+function getFileExtension(file) {
+  const name = file.name
+  const arr = name.split('.')
+  return arr[arr.length - 1];
 }
