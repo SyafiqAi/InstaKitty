@@ -38,7 +38,7 @@ function register() {
 
       console.log(auth.currentUser)
 
-      router.push('/feed')
+      router.push('/')
     })
     .catch((error) => {
       console.log('Error: ', error.message)
@@ -49,7 +49,7 @@ function signInWithGoogle() {
   signInWithPopup(getAuth(), provider)
     .then((result) => {
       console.log(result.user.displayName)
-      router.push('/feed')
+      router.push('/')
     })
     .catch((error) => {
       alert(error.message)

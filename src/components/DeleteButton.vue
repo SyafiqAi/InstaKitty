@@ -6,11 +6,12 @@
 import getCurrentUser from '@/firebase/getCurrentUser'
 import deleteDocument from '@/firebase/firestore/deleteDocument.js'
 import { ref } from 'vue'
+import isLoggedIn from '@/firebase/isLoggedIn'
 
 const props = defineProps(['post'])
 
 const currentUser = await getCurrentUser()
-const userIsAuthor = ref(currentUser.uid == props.post.author_uid)
+const userIsAuthor = await isLoggedIn() ? ref(currentUser.uid == props.post.author_uid) : false
 
 function handleDelete() {
   deleteDocument(props.post)

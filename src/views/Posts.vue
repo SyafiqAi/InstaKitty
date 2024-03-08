@@ -1,18 +1,14 @@
 <template>
   <h1>Posts</h1>
   <div class="cont">
-    <div v-for="post in posts" class="box">
-      {{ post.title }} by: {{ post.author_name }} <br />
-      <!-- {{ post }} -->
-
+    <div v-for="post in posts" class="box" @click="viewPost(post.post_id)">
       <Suspense>
         <template #fallback>
-          <div style="background-color: red">loading</div>
+          <!-- <div style="background-color: red">loading</div>
+           -->
+           <img :src="loadingSpinner" alt="loading" style="height:50px; width:50px;">
         </template>
-        <FirebaseImage :post="post" />
-      </Suspense>
-      <Suspense>
-        <DeleteButton :post="post" />
+        <FirebaseImage :filename="post.filename" />
       </Suspense>
     </div>
   </div>
@@ -28,6 +24,14 @@ import DeleteButton from '@/components/DeleteButton.vue'
 import { posts, getNext } from '@/firebase/firestore/readDocument.js'
 import { getImageUrlByFilename } from '@/firebase/storageCreateRef.js'
 import getCurrentUser from '@/firebase/getCurrentUser.js'
+import router from '@/router'
+import loadingSpinner from '@/assets/loading.gif'
+
+
+function viewPost(post_id) {
+  router.push(`/view-post/${post_id}`)
+}
+
 </script>
 
 <style lang="scss" scoped>
@@ -48,20 +52,24 @@ h1 {
   justify-content: center;
 }
 .box {
-  width: 50vw;
-  height: 50vw;
+  // max-width: 50vw;
+  height: 125px;
+  // width: 100%;
+  // max-width: 100%;
   display: block;
   overflow: hidden;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
+  
+  :hover {
+    transform: scale(1.1);
+    cursor: pointer;
+    transition: 100ms;
+  }
 }
 
 @media only screen and (min-width: 600px) {
   .box {
-    width: 300px;
+    // max-width: 300px;
     height: 300px;
   }
 }

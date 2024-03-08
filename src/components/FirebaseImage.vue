@@ -7,14 +7,14 @@
 import { onMounted, ref, watch } from 'vue'
 import defaultImage from '@/assets/logo.svg'
 import { getImageUrlByFilename } from '@/firebase/storageCreateRef'
-const props = defineProps(['post'])
+const props = defineProps(['filename'])
 
-const url = ref(await getImageUrlByFilename(props.post.filename))
+const url = ref(await getImageUrlByFilename(props.filename))
 </script>
 
 <style lang="scss" scoped>
 img {
-  max-height: 75%;
-  max-width: 75%;
+  max-height: 100%;
+  max-width: 100%;
 }
 </style>

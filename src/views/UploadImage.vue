@@ -1,10 +1,15 @@
 <template>
-  <h1>Upload image</h1>
-
-  <input @change="imageInputChange" ref="imgInput" accept="image/*" type="file" />
-  <input type="text" placeholder="Add a title" v-model="postTitle" />
-  <img v-if="imgUrl" :src="imgUrl" alt="user's image" />
-  <button @click="handleUpload">Upload</button>
+  <div class="upload-image">
+    <h1>Upload image</h1>
+    <br>
+    <input @change="imageInputChange" ref="imgInput" accept="image/*" type="file" />
+    <br>
+    <input type="text" placeholder="Add a title" v-model="postTitle" />
+    <br>
+    <img v-if="imgUrl" :src="imgUrl" alt="user's image" />
+    <br>
+    <button :disabled="!imgUrl" @click="handleUpload">Upload</button>
+  </div>
 </template>
 
 <script setup>
@@ -67,5 +72,23 @@ function getAuthorName(author) {
 img {
   max-height: 300px;
   max-width: 300px;
+}
+.upload-image {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  button {
+    background-color: rgb(112, 249, 112);
+    outline: none;
+    border: none;
+    padding: 1rem;
+    // :disabled {
+    //   background-color: grey
+    // }
+  }
+  button:disabled {
+      background-color: grey
+  }
 }
 </style>

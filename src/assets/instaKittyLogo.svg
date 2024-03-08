@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="70.967743mm"
-   height="84.498169mm"
-   viewBox="0 0 70.967743 84.498169"
+   width="70.912979mm"
+   height="70.912971mm"
+   viewBox="0 0 70.912979 70.912971"
    version="1.1"
    id="svg5"
    inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
@@ -24,13 +24,13 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="0.74564394"
-     inkscape:cx="245.42545"
-     inkscape:cy="132.77115"
-     inkscape:window-width="1920"
-     inkscape:window-height="1017"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
+     inkscape:zoom="1.0544998"
+     inkscape:cx="284.02092"
+     inkscape:cy="110.95308"
+     inkscape:window-width="1536"
+     inkscape:window-height="841"
+     inkscape:window-x="-7"
+     inkscape:window-y="1072"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1" />
   <defs
@@ -39,16 +39,17 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-341.35484,-119.88893)">
-    <circle
+     transform="translate(-341.38223,-126.68153)">
+    <ellipse
        style="fill:#ffffff;stroke:none;stroke-width:0.264999;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers;stop-color:#000000"
        id="path234"
        cx="376.83871"
-       cy="168.90323"
-       r="35.483871" />
+       cy="167.81555"
+       rx="35.45649"
+       ry="29.778954" />
     <path
        sodipodi:type="star"
-       style="fill:#ffffff;stroke:none;stroke-width:0.23274;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers;stop-color:#000000"
+       style="fill:#ffffff;stroke:none;stroke-width:0.254155;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers;stop-color:#000000"
        id="path394"
        inkscape:flatsided="true"
        sodipodi:sides="3"
@@ -61,12 +62,12 @@
        inkscape:rounded="-1.04083e-17"
        inkscape:randomized="0"
        d="m 310.96177,111.72856 30.50168,17.61015 -30.50168,17.61016 z"
-       inkscape:transform-center-x="-5.0910833"
-       inkscape:transform-center-y="-1.3500942"
-       transform="matrix(1.0121061,0.13278879,-0.00613937,1.2801087,28.444022,-62.560673)" />
+       inkscape:transform-center-x="-5.0871703"
+       inkscape:transform-center-y="-1.1330258"
+       transform="matrix(1.0113251,0.11143968,-0.00613463,1.0742993,28.71288,-26.434747)" />
     <path
        sodipodi:type="star"
-       style="fill:#ffffff;stroke:none;stroke-width:0.230895;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers;stop-color:#000000"
+       style="fill:#ffffff;stroke:none;stroke-width:0.252141;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers;stop-color:#000000"
        id="path506"
        inkscape:flatsided="true"
        sodipodi:sides="3"
@@ -79,18 +80,19 @@
        inkscape:rounded="-1.04083e-17"
        inkscape:randomized="0"
        d="m 310.96177,111.72856 30.50168,17.61015 -30.50168,17.61016 z"
-       inkscape:transform-center-x="4.9498384"
-       inkscape:transform-center-y="-1.5535486"
-       transform="matrix(-1.0109392,0.15279902,0.02150972,1.2997181,723.19499,-72.841354)" />
-    <circle
+       inkscape:transform-center-x="4.9460291"
+       inkscape:transform-center-y="-1.3037717"
+       transform="matrix(-1.0101591,0.12823276,0.02149312,1.090756,722.92771,-35.062552)" />
+    <ellipse
        style="fill:#ffffff;stroke:none;stroke-width:0.264999;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers;stop-color:#000000"
        id="circle508"
        cx="376.83871"
-       cy="168.90323"
-       r="35.483871" />
+       cy="167.81555"
+       rx="35.45649"
+       ry="29.778954" />
     <path
        sodipodi:type="star"
-       style="fill:#ffffff;stroke:none;stroke-width:0.23274;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers;stop-color:#000000"
+       style="fill:#ffffff;stroke:none;stroke-width:0.254155;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers;stop-color:#000000"
        id="path510"
        inkscape:flatsided="true"
        sodipodi:sides="3"
@@ -103,12 +105,12 @@
        inkscape:rounded="-1.04083e-17"
        inkscape:randomized="0"
        d="m 310.96177,111.72856 30.50168,17.61015 -30.50168,17.61016 z"
-       inkscape:transform-center-x="-5.0910833"
-       inkscape:transform-center-y="-1.3500942"
-       transform="matrix(1.0121061,0.13278879,-0.00613937,1.2801087,28.444022,-62.560673)" />
+       inkscape:transform-center-x="-5.0871703"
+       inkscape:transform-center-y="-1.1330258"
+       transform="matrix(1.0113251,0.11143968,-0.00613463,1.0742993,28.71288,-26.434747)" />
     <path
        sodipodi:type="star"
-       style="fill:#ffffff;stroke:none;stroke-width:0.230895;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers;stop-color:#000000"
+       style="fill:#ffffff;stroke:none;stroke-width:0.252141;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers;stop-color:#000000"
        id="path512"
        inkscape:flatsided="true"
        sodipodi:sides="3"
@@ -121,18 +123,19 @@
        inkscape:rounded="-1.04083e-17"
        inkscape:randomized="0"
        d="m 310.96177,111.72856 30.50168,17.61015 -30.50168,17.61016 z"
-       inkscape:transform-center-x="4.9498384"
-       inkscape:transform-center-y="-1.5535486"
-       transform="matrix(-1.0109392,0.15279902,0.02150972,1.2997181,723.19499,-72.841354)" />
-    <circle
+       inkscape:transform-center-x="4.9460291"
+       inkscape:transform-center-y="-1.3037717"
+       transform="matrix(-1.0101591,0.12823276,0.02149312,1.090756,722.92771,-35.062552)" />
+    <ellipse
        style="fill:#ffffff;stroke:none;stroke-width:0.264999;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers;stop-color:#000000"
        id="circle514"
        cx="376.83871"
-       cy="168.90323"
-       r="35.483871" />
+       cy="167.81555"
+       rx="35.45649"
+       ry="29.778954" />
     <path
        sodipodi:type="star"
-       style="fill:#ffffff;stroke:none;stroke-width:0.23274;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers;stop-color:#000000"
+       style="fill:#ffffff;stroke:none;stroke-width:0.254155;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers;stop-color:#000000"
        id="path516"
        inkscape:flatsided="true"
        sodipodi:sides="3"
@@ -145,12 +148,12 @@
        inkscape:rounded="-1.04083e-17"
        inkscape:randomized="0"
        d="m 310.96177,111.72856 30.50168,17.61015 -30.50168,17.61016 z"
-       inkscape:transform-center-x="-5.0910833"
-       inkscape:transform-center-y="-1.3500942"
-       transform="matrix(1.0121061,0.13278879,-0.00613937,1.2801087,28.444022,-62.560673)" />
+       inkscape:transform-center-x="-5.0871703"
+       inkscape:transform-center-y="-1.1330258"
+       transform="matrix(1.0113251,0.11143968,-0.00613463,1.0742993,28.71288,-26.434747)" />
     <path
        sodipodi:type="star"
-       style="fill:#ffffff;stroke:none;stroke-width:0.230895;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers;stop-color:#000000"
+       style="fill:#ffffff;stroke:none;stroke-width:0.252141;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers;stop-color:#000000"
        id="path518"
        inkscape:flatsided="true"
        sodipodi:sides="3"
@@ -163,8 +166,8 @@
        inkscape:rounded="-1.04083e-17"
        inkscape:randomized="0"
        d="m 310.96177,111.72856 30.50168,17.61015 -30.50168,17.61016 z"
-       inkscape:transform-center-x="4.9498384"
-       inkscape:transform-center-y="-1.5535486"
-       transform="matrix(-1.0109392,0.15279902,0.02150972,1.2997181,723.19499,-72.841354)" />
+       inkscape:transform-center-x="4.9460291"
+       inkscape:transform-center-y="-1.3037717"
+       transform="matrix(-1.0101591,0.12823276,0.02149312,1.090756,722.92771,-35.062552)" />
   </g>
 </svg>

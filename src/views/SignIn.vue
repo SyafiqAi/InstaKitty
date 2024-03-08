@@ -42,7 +42,7 @@ function signIn() {
 
       console.log(auth.currentUser)
 
-      router.push('/feed')
+      router.push('/')
     })
     .catch((error) => {
       console.log('Error: ', error.message)
@@ -69,7 +69,7 @@ function signInWithGoogle() {
   const auth = getAuth()
   signInWithPopup(auth, provider)
     .then((result) => {
-      router.push('/upload-image')
+      router.push('/')
     })
     .catch((error) => {
       alert('error: ', error)

@@ -17,7 +17,9 @@
     </div>
   </header>
 
-  <RouterView />
+  <Suspense>
+    <RouterView />
+  </Suspense>
 </template>
 
 <script setup>
@@ -42,7 +44,7 @@ onMounted(() => {
 
 function handleSignOut() {
   signOut(auth).then(() => {
-    router.push('/')
+    router.go(0)
   })
 }
 </script>
