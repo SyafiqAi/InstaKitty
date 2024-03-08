@@ -14,7 +14,10 @@ let documentSnapshots;
 documentSnapshots = await getDocs(first);
 documentSnapshots.forEach((doc) => {
     // doc.data() is never undefined for query doc snapshots
-    posts.value.push(doc.data())
+    //   console.log(doc.id, " => ", doc.data());
+    const dat = doc.data()
+    dat['post_id'] = doc.id
+    posts.value.push(dat)
 });
 
 let lastVisible;

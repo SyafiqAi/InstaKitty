@@ -65,14 +65,13 @@ export function getMeta() {
 }
 
 export function deleteImage(filename) {
-  const imageRef = ref(storage, `images/${filename}`)
-  deleteObject(imageRef).then(() => {
-    // File deleted successfully
-    alert('success')
-  }).catch((error) => {
-    // Uh-oh, an error occurred!
-    alert('fail', error)
-    console.log('error: ', error)
-  });
+  return new Promise((resolve, reject) => {
+    const imageRef = ref(storage, `images/${filename}`)
+    deleteObject(imageRef).then(() => {
+      resolve()
+    }).catch((error) => {
+      reject(error)
+    });
+  })
 
 }

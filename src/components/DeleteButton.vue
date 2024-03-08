@@ -4,6 +4,7 @@
 
 <script setup>
 import getCurrentUser from "@/firebase/getCurrentUser"
+import deletePost from "@/firebase/firestore/deleteDocument.js"
 import { ref } from "vue"
 
 const props = defineProps(['post'])
@@ -12,7 +13,7 @@ const currentUser = await getCurrentUser();
 const userIsAuthor = ref(currentUser.uid == props.post.author_uid)
 
 function handleDelete() {
-    
+    deletePost(props.post)
 }
 
 </script>
