@@ -34,6 +34,10 @@ npm run build
 npm run lint
 ```
 
+### Compile and Host on Firebase
+```sh
+./deploy.bat
+```
 ### Format with [Prettier](https://prettier.io/)
 
 ```sh
