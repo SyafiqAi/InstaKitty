@@ -12,7 +12,7 @@
         <RouterLink to="/upload-image">Upload</RouterLink>
         <div class="profile-pic" @click="handleSignOut" v-if="isLoggedIn">
           Sign out
-            <img :src="userPhotoURL" alt="user profile pic">
+          <img :src="userPhotoURL" alt="user profile pic" />
         </div>
         <div v-else>
           <RouterLink to="/register">Register</RouterLink>
@@ -42,7 +42,7 @@ onMounted(() => {
   onAuthStateChanged(auth, (user) => {
     if (user) {
       isLoggedIn.value = true
-      userPhotoURL.value = user.photoURL;
+      userPhotoURL.value = user.photoURL
     } else {
       isLoggedIn.value = false
     }
@@ -87,14 +87,14 @@ nav {
     padding: 0;
     height: 1.5rem;
   }
-  >div {
-    padding:0
+  > div {
+    padding: 0;
   }
   .profile-pic {
-    cursor: pointer; 
-    position:absolute; 
-    top:0; 
-    right:0;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
     padding: 1rem;
   }
 }
