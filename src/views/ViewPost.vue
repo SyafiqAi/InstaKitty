@@ -31,10 +31,8 @@ import loadingSpinner from '@/assets/loading.gif'
 const postId = useRoute().params.postId
 const post = await getPost(postId)
 
-
 const currentUser = await getCurrentUser()
-const userIsAuthor = await isLoggedIn() ? ref(currentUser.uid == post.author_uid) : false
-
+const userIsAuthor = (await isLoggedIn()) ? ref(currentUser.uid == post.author_uid) : false
 </script>
 
 <style lang="scss" scoped>

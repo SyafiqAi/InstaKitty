@@ -13,8 +13,8 @@ const props = defineProps(['post'])
 
 const currentUser = await getCurrentUser()
 const userIsAuthor = (await isLoggedIn()) ? ref(currentUser.uid == props.post.author_uid) : false
-const postId = useRoute().params.postId
 
+const postId = useRoute().params.postId
 function handleDelete() {
   deleteDocument(props.post, postId)
 }

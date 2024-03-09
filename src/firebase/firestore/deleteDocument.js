@@ -13,10 +13,9 @@ export default async function deletePost(post, postId) {
     })
     .then(() => {
       alert('Successfully deleted')
-      router.push('/')
-        .then(() => {
-          router.go(0)
-        })
+      router.push('/').then(() => {
+        router.go(0)
+      })
     })
     .catch((error) => {
       alert('error')
