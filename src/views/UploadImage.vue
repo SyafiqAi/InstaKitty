@@ -1,13 +1,13 @@
 <template>
   <div class="upload-image">
     <h1>Upload image</h1>
-    <br>
+    <br />
     <input @change="imageInputChange" ref="imgInput" accept="image/*" type="file" />
-    <br>
+    <br />
     <input type="text" placeholder="Add a title" v-model="postTitle" />
-    <br>
+    <br />
     <img v-if="imgUrl" :src="imgUrl" alt="user's image" />
-    <br>
+    <br />
     <button :disabled="!imgUrl" @click="handleUpload">Upload</button>
   </div>
 </template>
@@ -88,7 +88,7 @@ img {
     // }
   }
   button:disabled {
-      background-color: grey
+    background-color: grey;
   }
 }
 </style>

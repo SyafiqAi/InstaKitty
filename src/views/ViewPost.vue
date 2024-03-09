@@ -1,9 +1,9 @@
 <template>
   <div class="view-post">
     <Suspense>
-        <template #fallback>
-           <img :src="loadingSpinner" alt="loading" style="height:50px; width:50px;">
-        </template>
+      <template #fallback>
+        <img :src="loadingSpinner" alt="loading" style="height: 50px; width: 50px" />
+      </template>
       <FirebaseImage :filename="post.filename" />
     </Suspense>
     <h1>{{ post.title }}</h1>
@@ -42,5 +42,6 @@ const userIsAuthor = await isLoggedIn() ? ref(currentUser.uid == post.author_uid
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 8rem;
 }
 </style>

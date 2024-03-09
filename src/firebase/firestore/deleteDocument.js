@@ -3,9 +3,8 @@ import { doc, deleteDoc } from 'firebase/firestore'
 import { deleteImage } from '../storageCreateRef'
 import router from '@/router'
 
-export default async function deletePost(post) {
+export default async function deletePost(post, postId) {
   const filename = post.filename
-  const postId = post.post_id
 
   const postRef = doc(db, 'posts', postId)
   deleteDoc(postRef)
@@ -13,8 +12,11 @@ export default async function deletePost(post) {
       return deleteImage(filename)
     })
     .then(() => {
-      alert('successfully deleted')
-      router.go(0)
+      alert('Successfully deleted')
+      router.push('/')
+        .then(() => {
+          router.go(0)
+        })
     })
     .catch((error) => {
       alert('error')

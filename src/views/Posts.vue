@@ -6,14 +6,14 @@
         <template #fallback>
           <!-- <div style="background-color: red">loading</div>
            -->
-           <img :src="loadingSpinner" alt="loading" style="height:50px; width:50px;">
+          <img :src="loadingSpinner" alt="loading" style="height: 50px; width: 50px" />
         </template>
         <FirebaseImage :filename="post.filename" />
       </Suspense>
     </div>
   </div>
   <div class="center">
-    <button @click="getNext()">load more</button>
+    <button @click="getNext()">Load more</button>
   </div>
 </template>
 
@@ -27,11 +27,9 @@ import getCurrentUser from '@/firebase/getCurrentUser.js'
 import router from '@/router'
 import loadingSpinner from '@/assets/loading.gif'
 
-
 function viewPost(post_id) {
   router.push(`/view-post/${post_id}`)
 }
-
 </script>
 
 <style lang="scss" scoped>
@@ -59,7 +57,7 @@ h1 {
   display: block;
   overflow: hidden;
   display: flex;
-  
+
   :hover {
     transform: scale(1.1);
     cursor: pointer;

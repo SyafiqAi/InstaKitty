@@ -42,6 +42,8 @@ export async function getNext() {
     return
   }
   documentSnapshots.forEach((doc) => {
-    posts.value.push(doc.data())
+    const dat = doc.data()
+    dat['post_id'] = doc.id
+    posts.value.push(dat)
   })
 }

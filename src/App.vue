@@ -1,9 +1,11 @@
 <template>
   <header>
-    <div class="logo">
-      <img :src="instaKittyLogo" alt="" />
-      <h1>InstaKitty</h1>
-    </div>
+    <RouterLink to="/" style="color: inherit; text-decoration: none">
+      <div class="logo">
+        <img :src="instaKittyLogo" alt="" />
+        <h1>InstaKitty</h1>
+      </div>
+    </RouterLink>
     <div>
       <nav>
         <RouterLink to="/">Posts</RouterLink>
