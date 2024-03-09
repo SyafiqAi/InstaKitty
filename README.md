@@ -31,11 +31,11 @@ npm run build
 ### Lint with [ESLint](https://eslint.org/)
 
 ```sh
-npm run format
+npm run lint
 ```
 
 ### Format with [Prettier](https://prettier.io/)
 
 ```sh
-npm run lint
+npm run format
 ```
