@@ -10,7 +10,10 @@
       <nav>
         <RouterLink to="/">Posts</RouterLink>
         <RouterLink to="/upload-image">Upload</RouterLink>
-        <div style="cursor: pointer" @click="handleSignOut" v-if="isLoggedIn">Sign out</div>
+        <div class="profile-pic" style="cursor: pointer; position:absolute; top:0; right:0" @click="handleSignOut" v-if="isLoggedIn">
+          Sign out
+            <img :src="userPhotoURL" alt="user profile pic">
+        </div>
         <div v-else>
           <RouterLink to="/register">Register</RouterLink>
           <RouterLink to="/sign-in">Sign In</RouterLink>
@@ -32,12 +35,14 @@ import router from './router'
 import instaKittyLogo from './assets/instaKittyLogo.svg'
 
 const isLoggedIn = ref(false)
+const userPhotoURL = ref(null)
 let auth
 onMounted(() => {
   auth = getAuth()
   onAuthStateChanged(auth, (user) => {
     if (user) {
       isLoggedIn.value = true
+      userPhotoURL.value = user.photoURL;
     } else {
       isLoggedIn.value = false
     }
@@ -77,5 +82,20 @@ nav {
     text-decoration: underline;
   }
   text-align: center;
+  img {
+    border-radius: 100%;
+    padding: 0;
+    height: 1.5rem;
+  }
+  >div {
+    padding:0
+  }
+  .profile-pic {
+    cursor: pointer; 
+    position:absolute; 
+    top:0; 
+    right:0;
+    padding: 1rem;
+  }
 }
 </style>

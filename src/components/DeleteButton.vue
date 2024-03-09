@@ -19,8 +19,3 @@ function handleDelete() {
   deleteDocument(props.post, postId)
 }
 </script>
-
-<style lang="scss" scoped>
-button {
-}
-</style>
