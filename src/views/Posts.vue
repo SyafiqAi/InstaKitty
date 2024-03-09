@@ -18,10 +18,10 @@
 </template>
 
 <script setup>
-import '@/firebase/firestore/readDocument.js'
+import '@/firebase/firestore/readCollection.js'
 import FirebaseImage from '@/components/FirebaseImage.vue'
 import DeleteButton from '@/components/DeleteButton.vue'
-import { posts, getNext } from '@/firebase/firestore/readDocument.js'
+import { posts, getNext } from '@/firebase/firestore/readCollection.js'
 import { getImageUrlByFilename } from '@/firebase/storageCreateRef.js'
 import getCurrentUser from '@/firebase/getCurrentUser.js'
 import router from '@/router'
