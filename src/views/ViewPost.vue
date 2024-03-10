@@ -12,13 +12,12 @@
       <span v-if="userIsAuthor">(you)</span>
     </p>
     <Suspense>
-      <DeleteButton :post="post" :postId="postId" />
+      <DeleteButton :post="post" :post-id="postId" />
     </Suspense>
   </div>
 </template>
 
 <script setup>
-import router from '@/router'
 import { useRoute } from 'vue-router'
 import { getPost } from '@/firebase/firestore/getDocument.js'
 import FirebaseImage from '@/components/FirebaseImage.vue'

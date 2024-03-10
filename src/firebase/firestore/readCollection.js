@@ -1,5 +1,5 @@
 import { db } from '@/firebase'
-import { collection, query, where, getDocs, orderBy, limit, startAfter } from 'firebase/firestore'
+import { collection, query, getDocs, orderBy, limit, startAfter } from 'firebase/firestore'
 import { ref } from 'vue'
 
 const queryLimit = 25

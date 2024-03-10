@@ -2,10 +2,10 @@
   <div>
     <h1>Create an Account</h1>
     <p>
-      <input type="text" placeholder="Email" v-model="email" />
+      <input v-model="email" type="text" placeholder="Email" />
     </p>
     <p>
-      <input type="password" placeholder="Password" v-model="password" />
+      <input v-model="password" type="password" placeholder="Password" />
     </p>
     <p>
       <button @click="register">Submit</button>

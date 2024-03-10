@@ -1,5 +1,5 @@
 <template>
-  <button @click="handleDelete" v-if="userIsAuthor">Delete</button>
+  <button v-if="userIsAuthor" @click="handleDelete">Delete</button>
 </template>
 
 <script setup>

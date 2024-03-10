@@ -10,7 +10,7 @@
       <nav>
         <RouterLink to="/">Posts</RouterLink>
         <RouterLink to="/upload-image">Upload</RouterLink>
-        <div class="profile-pic" @click="handleSignOut" v-if="isLoggedIn">
+        <div v-if="isLoggedIn" class="profile-pic" @click="handleSignOut">
           Sign out
           <img :src="userPhotoURL" alt="user profile pic" />
         </div>

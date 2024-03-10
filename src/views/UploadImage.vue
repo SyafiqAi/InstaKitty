@@ -2,9 +2,9 @@
   <div class="upload-image">
     <h1>Upload image</h1>
     <br />
-    <input @change="imageInputChange" ref="imgInput" accept="image/*" type="file" />
+    <input ref="imgInput" accept="image/*" type="file" @change="imageInputChange" />
     <br />
-    <input type="text" placeholder="Add a title" v-model="postTitle" />
+    <input v-model="postTitle" type="text" placeholder="Add a title" />
     <br />
     <img v-if="imgUrl" :src="imgUrl" alt="user's image" />
     <br />

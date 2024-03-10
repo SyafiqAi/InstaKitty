@@ -1,7 +1,7 @@
 <template>
   <h1>Posts</h1>
   <div class="cont">
-    <div v-for="(post, postId) in posts" class="box" @click="viewPost(postId)">
+    <div v-for="(post, postId) in posts" class="box" @click="viewPost(postId)" :key="postId">
       <Suspense>
         <template #fallback>
           <!-- <div style="background-color: red">loading</div>
@@ -19,10 +19,7 @@
 
 <script setup>
 import FirebaseImage from '@/components/FirebaseImage.vue'
-import DeleteButton from '@/components/DeleteButton.vue'
 import { posts, getNext } from '@/firebase/firestore/readCollection.js'
-import { getImageUrlByFilename } from '@/firebase/storageCreateRef.js'
-import getCurrentUser from '@/firebase/getCurrentUser.js'
 import router from '@/router'
 import loadingSpinner from '@/assets/loading.gif'
 
