@@ -22,8 +22,6 @@ export async function getNext() {
   if (loadedAll) return
 
   lastVisible = documentSnapshots.docs[documentSnapshots.docs.length - 1]
-  console.log('last', lastVisible)
-  console.log(documentSnapshots.docs)
 
   // Construct a new query starting at this document,
   // get the next 25 cities.

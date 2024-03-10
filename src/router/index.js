@@ -40,7 +40,11 @@ const router = createRouter({
 
 router.beforeEach(async (to, from, next) => {
   if (to.meta.requiresAuth && !(await isLoggedIn())) {
-    alert("You're not logged in")
+    if (to.name == 'upload-image') {
+      alert("You must be signed in to upload.")
+    } else {
+      alert("You're not signed in.")
+    }
     next('/sign-in')
   } else {
     next()

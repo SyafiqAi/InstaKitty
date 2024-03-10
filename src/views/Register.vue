@@ -34,21 +34,16 @@ function register() {
   const auth = getAuth()
   createUserWithEmailAndPassword(auth, email.value, password.value)
     .then((data) => {
-      console.log('Successfully registered!')
-
-      console.log(auth.currentUser)
-
       router.push('/')
     })
     .catch((error) => {
-      console.log('Error: ', error.message)
+      alert('Error: ', error)
     })
 }
 function signInWithGoogle() {
   const provider = new GoogleAuthProvider()
   signInWithPopup(getAuth(), provider)
     .then((result) => {
-      console.log(result.user.displayName)
       router.push('/')
     })
     .catch((error) => {

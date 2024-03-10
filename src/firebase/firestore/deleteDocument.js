@@ -18,7 +18,6 @@ export default async function deletePost(post, postId) {
       })
     })
     .catch((error) => {
-      alert('error')
-      console.log(error)
+      alert('Error: ', error)
     })
 }

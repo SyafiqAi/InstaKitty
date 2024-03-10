@@ -58,8 +58,7 @@ function handleUpload() {
       })
     })
     .catch((error) => {
-      alert('failed')
-      console.log(error)
+      alert('Upload failed: ', error)
     })
 }
 

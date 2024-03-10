@@ -14,13 +14,14 @@
       <button @click="signIn">Submit</button>
     </p>
     <p>
-      <button @click="signInWithGoogle">Sign In With Google</button>
+      <button @click="signInWithGoogle"> <img :src="googleLogo" alt="Google G Logo"> Sign In With Google</button>
     </p>
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
+import googleLogo from '@/assets/Google__G__logo.svg'
 import {
   getAuth,
   GoogleAuthProvider,
@@ -38,15 +39,9 @@ function signIn() {
   const auth = getAuth()
   signInWithEmailAndPassword(auth, email.value, password.value)
     .then((data) => {
-      console.log('Successfully signed in!')
-
-      console.log(auth.currentUser)
-
       router.push('/')
     })
     .catch((error) => {
-      console.log('Error: ', error.message)
-
       switch (error.code) {
         case 'auth/invalid-email':
           errMsg.value = 'Invalid email'
@@ -82,5 +77,11 @@ div {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+button {
+  img {
+    margin-right: 0.5rem;
+  }
 }
 </style>
