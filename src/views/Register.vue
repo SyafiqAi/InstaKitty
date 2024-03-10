@@ -11,13 +11,14 @@
       <button @click="register">Submit</button>
     </p>
     <p>
-      <button @click="signInWithGoogle">Sign In With Google</button>
+      <button @click="signInWithGoogle"> <img :src="googleLogo" alt="Google G Logo"> Sign In With Google</button>
     </p>
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
+import googleLogo  from '@/assets/Google__G__logo.svg'
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -25,6 +26,7 @@ import {
   signInWithPopup
 } from 'firebase/auth'
 import { useRouter } from 'vue-router'
+
 
 const email = ref('')
 const password = ref('')

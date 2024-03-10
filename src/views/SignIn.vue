@@ -79,9 +79,4 @@ div {
   align-items: center;
 }
 
-button {
-  img {
-    margin-right: 0.5rem;
-  }
-}
 </style>
