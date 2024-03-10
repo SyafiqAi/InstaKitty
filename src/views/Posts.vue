@@ -1,7 +1,7 @@
 <template>
   <h1>Posts</h1>
   <div class="cont">
-    <div v-for="post in posts" class="box" @click="viewPost(post.post_id)">
+    <div v-for="(post, postId) in posts" class="box" @click="viewPost(postId)">
       <Suspense>
         <template #fallback>
           <!-- <div style="background-color: red">loading</div>
@@ -18,7 +18,6 @@
 </template>
 
 <script setup>
-import '@/firebase/firestore/readCollection.js'
 import FirebaseImage from '@/components/FirebaseImage.vue'
 import DeleteButton from '@/components/DeleteButton.vue'
 import { posts, getNext } from '@/firebase/firestore/readCollection.js'
@@ -27,8 +26,8 @@ import getCurrentUser from '@/firebase/getCurrentUser.js'
 import router from '@/router'
 import loadingSpinner from '@/assets/loading.gif'
 
-function viewPost(post_id) {
-  router.push(`/view-post/${post_id}`)
+function viewPost(postId) {
+  router.push(`/view-post/${postId}`)
 }
 </script>
 

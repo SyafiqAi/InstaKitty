@@ -4,8 +4,7 @@
 
 <script setup>
 // import getXray from "@/firebase/storageCreateRef";
-import { onMounted, ref, watch } from 'vue'
-import defaultImage from '@/assets/logo.svg'
+import { ref } from 'vue'
 import { getImageUrlByFilename } from '@/firebase/storageCreateRef'
 const props = defineProps(['filename'])
 

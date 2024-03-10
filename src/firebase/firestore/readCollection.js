@@ -5,15 +5,14 @@ import { ref } from 'vue'
 const queryLimit = 25
 
 const first = query(collection(db, 'posts'), orderBy('date_posted', 'desc'), limit(queryLimit))
-export const posts = ref([])
+export const posts = ref({})
 
 let documentSnapshots = await getDocs(first)
 documentSnapshots.forEach((doc) => {
   // doc.data() is never undefined for query doc snapshots
-  //   console.log(doc.id, " => ", doc.data());
-  const dat = doc.data()
-  dat['post_id'] = doc.id
-  posts.value.push(dat)
+  // console.log(doc.id, " => ", doc.data());
+
+  posts.value[doc.id] = doc.data()
 })
 
 let lastVisible
@@ -42,8 +41,6 @@ export async function getNext() {
     return
   }
   documentSnapshots.forEach((doc) => {
-    const dat = doc.data()
-    dat['post_id'] = doc.id
-    posts.value.push(dat)
+    posts.value[doc.id] = doc.data()
   })
 }

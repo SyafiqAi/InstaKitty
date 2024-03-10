@@ -12,7 +12,7 @@
       <span v-if="userIsAuthor">(you)</span>
     </p>
     <Suspense>
-      <DeleteButton :post="post" />
+      <DeleteButton :post="post" :postId="postId" />
     </Suspense>
   </div>
 </template>
