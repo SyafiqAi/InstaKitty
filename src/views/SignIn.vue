@@ -14,7 +14,9 @@
       <button @click="signIn">Submit</button>
     </p>
     <p>
-      <button @click="signInWithGoogle"> <img :src="googleLogo" alt="Google G Logo"> Sign In With Google</button>
+      <button @click="signInWithGoogle">
+        <img :src="googleLogo" alt="Google G Logo" /> Sign In With Google
+      </button>
     </p>
   </div>
 </template>
@@ -78,5 +80,4 @@ div {
   flex-direction: column;
   align-items: center;
 }
-
 </style>

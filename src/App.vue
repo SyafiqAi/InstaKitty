@@ -50,12 +50,13 @@ onMounted(() => {
 })
 
 function handleSignOut() {
-  signOut(auth).then(() => {
-    return router.push('/')
-  })
-  .then(() => {
-    router.go(0)
-  })
+  signOut(auth)
+    .then(() => {
+      return router.push('/')
+    })
+    .then(() => {
+      router.go(0)
+    })
 }
 </script>
 

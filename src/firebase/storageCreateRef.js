@@ -7,7 +7,7 @@ import {
   uploadBytes
 } from 'firebase/storage'
 import getCurrentUser from './getCurrentUser'
-// Get a reference to the storage service, which is used to create references in your storage bucket
+// Get a reference to the storage service, which is used to create references in our storage bucket
 const storage = getStorage()
 
 // Create a storage reference from our storage service
