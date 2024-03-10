@@ -1,6 +1,6 @@
 # instakitty
 
-This template should help get you started developing with Vue 3 in Vite.
+Instagram for cats
 
 ## Recommended IDE Setup
 
@@ -32,4 +32,14 @@ npm run build
 
 ```sh
 npm run lint
+```
+
+### Compile and Host on Firebase
+```sh
+./deploy.bat
+```
+### Format with [Prettier](https://prettier.io/)
+
+```sh
+npm run format
 ```
